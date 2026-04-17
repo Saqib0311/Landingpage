@@ -11,8 +11,11 @@ function App() {
 
       <main>
         <Hero />
+        <Trust />
+        <Results />
         <Services />
         <About />
+        <Testimonials />
         <Contact />
       </main>
 
@@ -54,6 +57,7 @@ function Navbar() {
   const links = [
     { label: 'Services', href: '#services' },
     { label: 'About', href: '#about' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -65,7 +69,7 @@ function Navbar() {
             <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-indigo-400 to-fuchsia-400" />
           </span>
           <span className="text-sm font-semibold tracking-wide">
-            Dex<span className="text-white/70">Vote</span>
+            AuraScale<span className="text-white/70">Digital</span>
           </span>
         </a>
 
@@ -82,8 +86,12 @@ function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="secondary" href="#contact" className="hidden sm:inline-flex">
-            Book a demo
+          <Button
+            variant="secondary"
+            href="#contact"
+            className="hidden sm:inline-flex"
+          >
+            Book Free Consultation
           </Button>
           <Button href="#contact">Get started</Button>
         </div>
@@ -95,34 +103,38 @@ function Navbar() {
 function Hero() {
   return (
     <section id="top" className="relative">
-      <Container className="py-16 sm:py-20">
+      <Container className="py-20 sm:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <Pill>Agency-grade voting experiences</Pill>
-            <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Modern voting landing pages that{' '}
+            <Pill>Business website + landing page studio</Pill>
+            <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+              We build high-converting websites that{' '}
               <span className="bg-gradient-to-r from-indigo-300 via-fuchsia-300 to-cyan-200 bg-clip-text text-transparent">
-                convert users into voters
+                grow your business
               </span>
               .
             </h1>
             <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-white/70">
-              DexVote is a voting website agency that designs clean, trusted, and
-              fast experiences—built for elections, polls, contests, and token
-              governance.
+              Modern, fast, and designed to turn visitors into customers.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="#contact">Request proposal</Button>
+              <Button href="#contact">Get Your Website Now</Button>
               <Button variant="secondary" href="#services">
-                See services
+                Start Your Project
               </Button>
             </div>
 
+            <div className="mt-8 grid max-w-xl gap-2 text-sm text-white/75">
+              <ValueLine>Increase your online presence</ValueLine>
+              <ValueLine>Get more leads and customers</ValueLine>
+              <ValueLine>Convert visitors into sales</ValueLine>
+            </div>
+
             <div className="mt-10 grid max-w-xl grid-cols-3 gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <Stat label="Avg. uplift" value="+32%" />
+              <Stat label="Projects delivered" value="10+" />
+              <Stat label="Happy clients" value="5+" />
               <Stat label="Time to launch" value="7–14d" />
-              <Stat label="Uptime target" value="99.9%" />
             </div>
           </div>
 
@@ -130,7 +142,7 @@ function Hero() {
             <div className="absolute -inset-6 -z-10 rounded-[32px] bg-gradient-to-br from-indigo-500/20 via-fuchsia-500/10 to-cyan-500/10 blur-2xl" />
             <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
               <div className="flex items-center justify-between">
-                <div className="text-sm font-semibold">DexVote Dashboard</div>
+                <div className="text-sm font-semibold">Website Preview</div>
                 <div className="flex items-center gap-2">
                   <Dot className="bg-rose-400/80" />
                   <Dot className="bg-amber-300/80" />
@@ -142,38 +154,136 @@ function Hero() {
                 <div className="rounded-2xl border border-white/10 bg-[#070A12]/60 p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <div className="text-xs text-white/60">Live poll</div>
+                      <div className="text-xs text-white/60">Lead funnel</div>
                       <div className="mt-1 text-sm font-semibold">
-                        “Which feature should we ship next?”
+                        “Visitors → leads → customers”
                       </div>
                     </div>
-                    <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-xs font-medium text-emerald-200">
-                      Voting open
+                    <span className="rounded-full border border-indigo-400/30 bg-indigo-400/10 px-2.5 py-1 text-xs font-medium text-indigo-200">
+                      Live
                     </span>
                   </div>
 
                   <div className="mt-4 space-y-3">
-                    <Progress label="Mobile-first UI" value={62} />
-                    <Progress label="2FA / OTP login" value={24} />
-                    <Progress label="Anti-fraud checks" value={14} />
+                    <Progress label="Speed score" value={92} />
+                    <Progress label="Conversion clarity" value={78} />
+                    <Progress label="Mobile UX" value={88} />
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <MiniCard title="Secure by design" desc="Rate-limit, audit logs, and abuse controls." />
-                  <MiniCard title="Brand-ready" desc="Your colors, type, and voice—done right." />
+                  <MiniCard
+                    title="Built to convert"
+                    desc="Clear messaging, proof, and strong CTAs."
+                  />
+                  <MiniCard
+                    title="Brand-perfect"
+                    desc="Your colors, fonts, and visuals—polished."
+                  />
                 </div>
               </div>
             </div>
 
             <p className="mt-4 text-xs text-white/50">
-              UI mock section (theme-inspired). Replace with your real product
-              screenshots anytime.
+              Preview panel (theme-inspired). Replace with your real screenshots
+              anytime.
             </p>
           </div>
         </div>
       </Container>
     </section>
+  )
+}
+
+function Trust() {
+  const logos = ['Nexa', 'BrightCo', 'Orbit', 'Bluepeak', 'Kora']
+  return (
+    <section className="border-y border-white/10 bg-white/[0.03]">
+      <Container className="py-10">
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <div className="text-center md:text-left">
+            <div className="text-sm font-semibold text-white/80">
+              Trusted by growing teams
+            </div>
+            <div className="mt-1 text-sm text-white/60">
+              Proof-first design that’s easy to sell.
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold tracking-wide text-white/45">
+            {logos.map((l) => (
+              <span key={l} className="select-none">
+                {l}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+function Results() {
+  const items = [
+    {
+      title: 'Increase conversions by up to 2×',
+      desc: 'Clear offer, stronger CTAs, and trust blocks designed to reduce drop-off.',
+    },
+    {
+      title: 'Boost your online presence',
+      desc: 'Premium look + fast performance so you rank better and look credible.',
+    },
+    {
+      title: 'More leads, better conversion, steady growth',
+      desc: 'Messaging + layout focused on outcomes, not just “features.”',
+    },
+  ]
+
+  return (
+    <section className="border-b border-white/10">
+      <Container className="py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="Results"
+          title="Outcome-first websites (not just nice design)"
+          desc="Clients don’t buy pages — they buy growth. This is how we structure your site to deliver results."
+        />
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {items.map((i) => (
+            <div
+              key={i.title}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            >
+              <div className="text-lg font-semibold tracking-tight">
+                {i.title}
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                {i.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+function ValueLine({ children }) {
+  return (
+    <div className="flex items-start gap-2">
+      <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-lg bg-indigo-400/10 text-indigo-200 ring-1 ring-indigo-400/20">
+        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
+          <path
+            d="M8 12l3 3 6-7"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <span className="text-white/75">{children}</span>
+    </div>
   )
 }
 
@@ -247,8 +357,8 @@ function Services() {
       ),
     },
     {
-      title: 'Voting UX strategy',
-      desc: 'Flows for signup → ballot → confirmation, with friction reduced and clarity increased.',
+      title: 'Web design + build',
+      desc: 'Fast, responsive pages built in React + Tailwind with clean components and smooth UX.',
       icon: (
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
           <path
@@ -262,8 +372,8 @@ function Services() {
       ),
     },
     {
-      title: 'Trust & anti-fraud',
-      desc: 'Design patterns that signal security: verification, audit trails, and transparent results.',
+      title: 'Conversion upgrades',
+      desc: 'Copy + layout improvements that turn visits into leads with proof, clarity, and strong CTAs.',
       icon: (
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
           <path
@@ -282,8 +392,8 @@ function Services() {
       <Container className="py-16 sm:py-20">
         <SectionHeading
           eyebrow="Services"
-          title="Everything you need for a high-converting voting website"
-          desc="Three focused services to help you launch a modern voting experience with clarity, credibility, and speed."
+          title="Everything you need for a high-converting business website"
+          desc="Three focused services to help you launch a modern site with clarity, proof, and speed."
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -304,10 +414,8 @@ function Services() {
                   {c.desc}
                 </p>
                 <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/80">
-                  Learn more
-                  <span className="transition group-hover:translate-x-0.5">
-                    →
-                  </span>
+                  View details
+                  <span className="transition group-hover:translate-x-0.5">→</span>
                 </div>
               </div>
             </div>
@@ -325,14 +433,14 @@ function About() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow="About DexVote"
-              title="We design voting experiences people trust"
-              desc="Whether it’s a public election, a product poll, or community governance—your users must feel safe, informed, and in control."
+              eyebrow="About Lumina"
+              title="A small studio with a conversion-first mindset"
+              desc="We combine modern design, clean code, and persuasive structure so your website explains the offer instantly and earns trust in seconds."
             />
             <div className="mt-8 grid gap-3">
-              <CheckLine>Clear ballots with zero confusion</CheckLine>
-              <CheckLine>Mobile-first layouts and fast performance</CheckLine>
-              <CheckLine>Trust signals that reduce drop-off</CheckLine>
+              <CheckLine>Clear headline, offer, and CTA above the fold</CheckLine>
+              <CheckLine>Better spacing, typography, and mobile UX</CheckLine>
+              <CheckLine>Proof blocks that increase trust and inquiries</CheckLine>
             </div>
           </div>
 
@@ -382,14 +490,77 @@ function FeatureCard({ title, desc }) {
   )
 }
 
+function Testimonials() {
+  const items = [
+    {
+      quote:
+        'Our landing page finally explains what we do in one scroll. We started getting consistent inquiries the same week.',
+      name: 'Ayesha Khan',
+      title: 'Founder, BrightCo',
+    },
+    {
+      quote:
+        'Fast delivery, clean UI, and a strong CTA structure. It looks premium and feels effortless to use on mobile.',
+      name: 'Daniel Reyes',
+      title: 'Marketing Lead, Orbit',
+    },
+    {
+      quote:
+        'They improved our messaging and layout. The new site feels trustworthy and the lead quality is noticeably better.',
+      name: 'Mina Patel',
+      title: 'Operations, Nexa',
+    },
+  ]
+
+  return (
+    <section id="testimonials" className="border-t border-white/10">
+      <Container className="py-16 sm:py-20">
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="Design that clients can trust (and buy)"
+          desc="Realistic sample testimonials for now—swap with your client quotes anytime."
+        />
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {items.map((t) => (
+            <figure
+              key={t.name}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            >
+              <blockquote className="text-sm leading-relaxed text-white/75">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-5 flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-2xl bg-white/5 ring-1 ring-white/10">
+                  <span className="text-sm font-semibold text-white/80">
+                    {t.name
+                      .split(' ')
+                      .slice(0, 2)
+                      .map((p) => p[0])
+                      .join('')}
+                  </span>
+                </span>
+                <div>
+                  <div className="text-sm font-semibold">{t.name}</div>
+                  <div className="text-xs text-white/55">{t.title}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
+
 function Contact() {
   return (
     <section id="contact" className="border-t border-white/10">
       <Container className="py-16 sm:py-20">
         <SectionHeading
           eyebrow="Contact"
-          title="Tell us about your voting project"
-          desc="Send a quick brief and we’ll reply with a plan, timeline, and a transparent quote."
+          title="Let’s build your website today"
+          desc="Tell us your niche, goals, and deadline. We’ll reply with a clear plan, timeline, and quote."
         />
 
         <div className="mx-auto mt-10 grid max-w-4xl gap-6 lg:grid-cols-5">
@@ -402,7 +573,10 @@ function Contact() {
                 <Field label="Full name" placeholder="Your name" />
                 <Field label="Email" type="email" placeholder="you@company.com" />
               </div>
-              <Field label="Project type" placeholder="Election / Poll / Contest / Governance" />
+              <Field
+                label="Project type"
+                placeholder="Business website / Landing page / Redesign"
+              />
               <div className="grid gap-2">
                 <label className="text-sm font-semibold text-white/80">
                   Message
@@ -415,10 +589,10 @@ function Contact() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-white/50">
-                  By submitting, you agree we can contact you about DexVote.
+                  By submitting, you agree we can contact you about AuraScale Digital.
                 </p>
                 <Button as="button" type="submit">
-                  Send message
+                  Get my free quote
                 </Button>
               </div>
             </form>
@@ -429,7 +603,7 @@ function Contact() {
             <div className="mt-4 space-y-4 text-sm text-white/70">
               <InfoRow label="Typical turnaround" value="7–14 days" />
               <InfoRow label="Deliverables" value="Design + React + Tailwind UI" />
-              <InfoRow label="Best for" value="Voting sites that need trust + speed" />
+              <InfoRow label="Best for" value="Local businesses + startups" />
             </div>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-[#070A12]/40 p-4">
@@ -437,7 +611,7 @@ function Contact() {
                 Suggested CTA
               </div>
               <div className="mt-2 text-sm text-white/80">
-                “Start your vote with confidence.”
+                “A premium website that sells your service for you.”
               </div>
             </div>
           </div>
@@ -476,10 +650,10 @@ function Footer() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
             <div className="text-sm font-semibold">
-              Dex<span className="text-white/70">Vote</span>
+              AuraScale<span className="text-white/70">Digital</span>
             </div>
             <div className="mt-1 text-sm text-white/60">
-              Agency-style landing pages for voting platforms.
+              Modern websites built to convert visitors into customers.
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
@@ -489,6 +663,9 @@ function Footer() {
             <a className="hover:text-white" href="#about">
               About
             </a>
+            <a className="hover:text-white" href="#testimonials">
+              Testimonials
+            </a>
             <a className="hover:text-white" href="#contact">
               Contact
             </a>
@@ -496,7 +673,9 @@ function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <div>© {new Date().getFullYear()} DexVote. All rights reserved.</div>
+          <div>
+            © {new Date().getFullYear()} AuraScale Digital. All rights reserved.
+          </div>
           <div className="text-white/40">Built with React + Tailwind</div>
         </div>
       </Container>
